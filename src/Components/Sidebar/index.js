@@ -1,10 +1,24 @@
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect, useState } from "react";
 const Sidebar = () => {
+  const [sidebar, setSidebar] = useState({});
+  
+
+  useEffect(() => {
+    const db = getDatabase();
+    const sidebarRef = ref(db, "sidebar");
+    
+    onValue(sidebarRef, (snapshot) => {
+      const data = snapshot.val();
+      setSidebar(data);
+    });
+  }, []);
   return (
     <aside className="cv-sidebar">
       <div className="profile-picture">
-        <img src="images/profile.jpg" alt="Foto Profil" />
+        <img src={`data:image/jpeg;base64, ${sidebar.image}`} alt="Foto Profil" />
       </div>
-      <h1>Arturito Rawung</h1>
+      <h1>{sidebar.title}</h1>
       <p>Mahasiswa Universitas Klabat</p>
       <div className="cv-contact">
         <h2>Kontak</h2>

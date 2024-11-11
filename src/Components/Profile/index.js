@@ -1,12 +1,21 @@
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect, useState } from "react";
 const Profile = () => {
+  const [profile, setProfile] = useState({});
+  useEffect(() => {
+    const db = getDatabase();
+    const profileRef = ref(db, "profile");
+    
+    onValue(profileRef, (snapshot) => {
+      const data = snapshot.val();
+      setProfile(data);
+    });
+  }, []);
   return (
+    
     <section id="profil" className="cv-section">
-      <h2>Profil</h2>
-      <p>
-        Nama Saya Arturito Imanuel Rawung biasa di panggil arturrr saat ini saya
-        berkuliah di Universitas Klabat semester 5, dan saya sedang tertarik
-        dalam pengembangan mobile apps.
-      </p>
+      <h2>{profile.title}</h2>
+      <p>{profile.subTitle}</p>
     </section>
   );
 };
