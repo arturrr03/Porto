@@ -7,6 +7,7 @@ import Experience from "./Components/Experience";
 import Education from "./Components/Education";
 import Skill from "./Components/Skill";
 import Contact from "./Components/Contact";
+import Profile from "./Components/Profile";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Sidebar />
         <main className="cv-main">
           <Header />
+          <Profile />
           <Experience />
           <Education />
           <Skill />
