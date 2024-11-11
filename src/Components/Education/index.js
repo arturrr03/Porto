@@ -4,7 +4,7 @@ const Education = () => {
       <h2>Pendidikan</h2>
       <div className="cv-education">
         <h3>SD Advent Langowan</h3>
-        <p> SD |2009-2015</p>
+        <p> SD | 2009-2015</p>
         <h3>SMP Negeri 1 Langowan</h3>
         <p>SMP | 2015-2018</p>
         <h3>SMK Negeri 1 Langowan</h3>
