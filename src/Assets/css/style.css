@@ -149,13 +149,36 @@
   color: #27ae60;
 }
 .cv-social img {
-  width: 40x; /* Mengatur lebar ikon */
-  height: 40px; /* Mengatur tinggi ikon */
-  margin: 0 8px; /* Memberi sedikit jarak antara ikon */
+  width: 60x; /* Mengatur lebar ikon */
+  height: 50px; /* Mengatur tinggi ikon */
+  margin: 0 5px; /* Memberi sedikit jarak antara ikon */
   transition: transform 0.2s ease; /* Menambahkan efek transisi saat dihover */
-  border-radius: 50%;
+  border-radius: 60%;
+
 }
 
 .cv-social a:hover img {
-  transform: scale(1.1); /* Memperbesar sedikit saat dihover */
-}
+  transform: scale(1.1);
+ } /* Memperbesar sedikit saat dihover */
+  .cv-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds space between rows */
+  }
+  
+  .social-row {
+    display: flex;
+    justify-content: center; /* Adjusts space between icons */
+    gap: 10px; /* Adjust space between icons if needed */
+  }
+  
+  .cv-social a {
+    width: 40px; /* Adjust width of icons if necessary */
+    height: 40px; /* Adjust height of icons if necessary */
+  }
+  
+  .cv-social img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
