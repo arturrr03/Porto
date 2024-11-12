@@ -1,18 +1,6 @@
-import { getDatabase, ref, onValue } from "firebase/database";
-import { useEffect, useState } from "react";
-const Header = () => {
-  // const [hero, setHero] = useState({});
-  
 
-  // useEffect(() => {
-  //   const db = getDatabase();
-  //   const heroRef = ref(db, "hero");
-    
-  //   onValue(heroRef, (snapshot) => {
-  //     const data = snapshot.val();
-  //     setHero(data);
-  //   });
-  // }, []);
+const Header = () => {
+  
   return (
     <header className="cv-header">
       <nav className="cv-nav">
