@@ -1,7 +1,21 @@
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect, useState } from "react";
 const Education = () => {
+  const [education, setEducation] = useState([]);
+  
+
+  useEffect(() => {
+    const db = getDatabase();
+    const educationRef = ref(db, "education/");
+    
+    onValue(educationRef, (snapshot) => {
+      const data = snapshot.val();
+      setEducation(data);
+    });
+  }, []);
   return (
     <section id="pendidikan" className="cv-section">
-      <h2>Pendidikan</h2>
+      <h2>{education.title}</h2>
       <div className="cv-education">
         <h3>SD Advent Langowan</h3>
         <p> SD | 2009-2015</p>

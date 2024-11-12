@@ -1,8 +1,9 @@
-
+import {Fade} from "react-awesome-reveal";
 const Header = () => {
   
   return (
-    <header className="cv-header">
+    <Fade>
+      <header className="cv-header">
       <nav className="cv-nav">
         <ul>
           <li>
@@ -23,6 +24,8 @@ const Header = () => {
         </ul>
       </nav>
     </header>
-  );
+  
+    </Fade>
+    );
 };
 export default Header;

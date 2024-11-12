@@ -1,6 +1,6 @@
 import { getDatabase, ref, onValue } from "firebase/database";
 import { useEffect, useState } from "react";
-
+import {Fade} from "react-awesome-reveal";
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState({});
   
@@ -15,7 +15,8 @@ const Sidebar = () => {
     });
   }, []);
   return (
-    <aside className="cv-sidebar">
+    <Fade>
+       <aside className="cv-sidebar">
       <div className="profile-picture">
         <img src={`data:image/jpeg;base64, ${sidebar.image}`} alt="Foto Profil" />
       </div>
@@ -62,6 +63,9 @@ const Sidebar = () => {
         </div>
       </div>
     </aside>
+
+    </Fade>
+   
   );
 };
 export default Sidebar;
